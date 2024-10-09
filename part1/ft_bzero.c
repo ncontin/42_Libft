@@ -6,11 +6,9 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:12:24 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/09 13:59:31 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/09 18:37:39 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n)
 {
