@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 15:12:24 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/10 16:04:35 by ncontin          ###   ########.fr       */
+/*   Created: 2024/10/10 09:28:52 by ncontin           #+#    #+#             */
+/*   Updated: 2024/10/10 15:54:30 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*ptr;
+	char	*ptr_s1;
+	char	*ptr_s2;
 	size_t	i;
 
-	ptr = (char *)s;
 	i = 0;
+	ptr_s1 = (char *)s1;
+	ptr_s2 = (char *)s2;
 	while (i < n)
 	{
-		ptr[i] = '\0';
+		if (ptr_s1[i] != ptr_s2[i])
+			return (ptr_s1[i] - ptr_s2[i]);
 		i++;
 	}
+	return (0);
 }
+
 // int	main(void)
 // {
-// 	char	str[50] = "GeeksForGeeks is for programming geeks.";
+// 	char	str1[10] = "hello";
+// 	char	str2[10] = "q";
 
-// 	printf("\nBefore bzero(): %s\n", str);
-// 	ft_bzero(str, 2);
-// 	printf("After bzero():\n");
+// 	printf("%d\n", ft_memcmp(str1, str2, 3));
+// 	printf("%d\n", memcmp(str1, str2, 3));
 // }

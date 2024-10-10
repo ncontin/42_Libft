@@ -6,11 +6,11 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:23:08 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/09 11:26:53 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/10 16:26:22 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -25,8 +25,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (n > 0)
 		{
-			dst_ptr[n] = src_ptr[n];
 			n--;
+			dst_ptr[n] = src_ptr[n];
 		}
 	}
 	else
@@ -39,16 +39,16 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-// #include <stdio.h>
-// #include <string.h>
-// int main(void)
+// int	main(void)
 // {
-//     char str1[] = "Geeks";
-//     char str2[] = "Quiz";
-//     puts("str1 before memmove ");
-//     puts(str1);
-//     // Copies contents of str2 to str1
-//     memmove(str1, str2, sizeof(str2));
-//     puts("\nstr1 after memmove ");
-//     puts(str1);
+// 	char	str1[] = "aaaaaa";
+// 	char	str2[] = "123456";
+
+// 	puts("str1 before memmove ");
+// 	puts(str1);
+// 	// Copies contents of str2 to str1
+// 	// memmove(str1, str2, 4);
+// 	ft_memmove(str1, str2, 4);
+// 	puts("\nstr1 after memmove ");
+// 	puts(str1);
 // }

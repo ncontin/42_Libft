@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 11:22:23 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/10 16:54:15 by ncontin          ###   ########.fr       */
+/*   Created: 2024/10/10 10:23:00 by ncontin           #+#    #+#             */
+/*   Updated: 2024/10/10 18:29:34 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	j;
+	size_t	little_len;
 
 	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
+	little_len = (ft_strlen(little));
+	if (little_len == 0)
+		return ((char *)&big[0]);
+	while (i < len && big[i])
 	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		j = 0;
+		while (little[j] == big[i + j])
+		{
+			j++;
+			if (j == little_len)
+				return ((char *)&big[i]);
+		}
 		i++;
 	}
 	return (0);
@@ -28,6 +38,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 // int	main(void)
 // {
-// 	printf("%d\n", strncmp("test\200", "test\0", 6));
-// 	printf("%d\n", ft_strncmp("test\200", "test\0", 6));
+// 	const char	str[20] = "Foo Bar Baz";
+// 	const char	substr[10] = "Bar";
+// 	char		*result;
+
+// 	result = ft_strnstr(str, substr, 4);
+// 	printf("The substring is: %s\n", result);
 // }

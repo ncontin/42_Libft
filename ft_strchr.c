@@ -6,9 +6,12 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:33:22 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/08 17:19:45 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/10 17:20:41 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// The	strchr(void) function returns a pointer to the first occurrence of the character c in the string s.
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
