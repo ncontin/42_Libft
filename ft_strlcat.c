@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noscrub <noscrub@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:26:46 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/09 20:54:54 by noscrub          ###   ########.fr       */
+/*   Updated: 2024/10/10 08:29:47 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <bsd/string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -36,15 +37,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 int	main(void)
 {
-	char	src1[] = "Hello";
-	char	dst1[20] = "Bonjour";
 	size_t	size;
+	char	src1[5] = "Hello";
+	char	dst1[7] = "Bonjour";
+	char	src[5] = "Hello";
+	char	dst[7] = "Bonjour";
 
-	// char	src[] = "Hello";
-	// char	dst[20] = "Bonjour";
-	size = 10;
-	// printf("%zu\n", strlcat(dst, src, size));
-	// printf("strlcat: %s\n", dst);
+	size = 20;
+	printf("%zu\n", strlcat(dst, src, size));
+	printf("strlcat: %s\n", dst);
 	printf("%zu\n", ft_strlcat(dst1, src1, size));
 	printf("ft_strlcat: %s\n", dst1);
 }
