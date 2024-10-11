@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:23:00 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/10 18:29:34 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/11 18:20:34 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	little_len = (ft_strlen(little));
 	if (little_len == 0)
-		return ((char *)&big[0]);
+		return ((char *)big);
 	while (i < len && big[i])
 	{
 		j = 0;
-		while (little[j] == big[i + j])
+		while (i + j < len && little[j] && little[j] == big[i + j])
 		{
 			j++;
 			if (j == little_len)

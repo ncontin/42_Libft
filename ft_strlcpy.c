@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:29:02 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/10 15:50:44 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/11 16:36:17 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	len = ft_strlen(src);
 	i = 0;
+	if (size == 0)
+		return (len);
 	while (i < size - 1 && src[i] != '\0')
 	{
 		dst[i] = src[i];

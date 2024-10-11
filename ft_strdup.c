@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 11:42:12 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/11 12:56:01 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/11 16:24:09 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 	char	len;
 
 	len = ft_strlen(s);
-	dup = malloc(len);
+	dup = malloc(len + 1);
 	i = 0;
 	if (!dup)
 		return (NULL);

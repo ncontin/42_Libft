@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:07:56 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/10 17:06:40 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/11 17:44:44 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	char	let;
+	int		len;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	while (i >= 0)
+	let = c;
+	len = ft_strlen(s);
+	while (len >= 0)
 	{
-		i--;
-		if (s[i] == c)
-		{
-			return ((char *)&s[i]);
-		}
+		if (s[len] == let)
+			return ((char *)&s[len]);
+		len--;
 	}
 	return (0);
 }

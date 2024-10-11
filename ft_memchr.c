@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 07:51:55 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/10 15:51:24 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/11 16:57:15 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*ptr_s;
+	unsigned char	ptr_c;
 	size_t			i;
 
 	i = 0;
+	ptr_c = c;
 	ptr_s = (unsigned char *)s;
 	while (i < n)
 	{
-		if (ptr_s[i] == c)
+		if (ptr_s[i] == ptr_c)
 			return (&ptr_s[i]);
 		i++;
 	}

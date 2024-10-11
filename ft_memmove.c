@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:23:08 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/10 16:26:22 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/11 18:57:15 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*src_ptr;
 	size_t	i;
 
+	i = 0;
 	dst_ptr = (char *)dest;
 	src_ptr = (char *)src;
-	i = 0;
 	if (dst_ptr > src_ptr)
 	{
 		while (n > 0)
