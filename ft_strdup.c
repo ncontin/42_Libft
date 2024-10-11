@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 18:37:42 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/11 12:55:53 by ncontin          ###   ########.fr       */
+/*   Created: 2024/10/11 11:42:12 by ncontin           #+#    #+#             */
+/*   Updated: 2024/10/11 12:56:01 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strdup(const char *s)
 {
-	int	i;
-	int	sign;
-	int	result;
+	char	*dup;
+	int		i;
+	char	len;
 
-	sign = 1;
+	len = ft_strlen(s);
+	dup = malloc(len);
 	i = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= '\t' && nptr[i] <= '\r'))
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	if (!dup)
+		return (NULL);
+	while (i < len)
 	{
-		if (nptr[i] == '-')
-		{
-			sign = -1;
-		}
+		dup[i] = s[i];
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result = (result * 10) + (nptr[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	dup[i] = '\0';
+	return (dup);
 }
 
 // int	main(void)
 // {
-// 	printf("%d\n", ft_atoi("    -2147483648"));
+// 	char	str[] = "Hello";
+
+// 	printf("%s\n", ft_strdup(str));
 // }
