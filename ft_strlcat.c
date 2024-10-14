@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:26:46 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/13 22:30:29 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/14 08:47:57 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size == 0)
 		return (src_len);
+	if (dst == 0)
+		return (dst_len + src_len);
 	if (size <= dst_len)
 		return (size + src_len);
 	while (src[i] && (dst_len + i) < (size - 1))
