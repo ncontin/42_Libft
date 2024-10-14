@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 08:55:56 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/14 13:04:05 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/14 15:44:33 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static int	find_start(char const *s1, char const *set)
 		else
 			j++;
 	}
-	i--;
 	return (i);
 }
 
@@ -65,6 +64,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = find_start(s1, set);
 	end = find_end(s1, set);
 	res = malloc(end - start + 1);
+	if (!res)
+		return (NULL);
 	while (start < end)
 	{
 		res[j] = s1[start];
@@ -79,17 +80,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int	main(void)
 // {
-// 	int		i;
 // 	char	*string;
+// 	char	s1[] = "  \t \t \n   \n\n\n\t";
+// 	char	s2[] = "";
 
-// 	string = ft_strtrim("  hello   ", " h");
-// 	i = 0;
-// 	while (i < 10)
-// 	{
-// 		write(1, &string[i], 10);
-// 		i++;
-// 	}
-// 	printf("%d\n", find_start("  hello   ", " h"));
-// 	printf("%d\n", find_end("  hello   ", " h"));
-// 	printf("%s\n", ft_strtrim("  hello   ", " h"));
+// 	printf("%d\n", find_start(s1, " \n\t"));
+// 	printf("%d\n", find_end(s1, " \n\t"));
+// 	printf("%s\n", ft_strtrim(s1, " \n\t"));
+// 	printf("%s\n", ft_strtrim(s2, " \n\t"));
 // }
