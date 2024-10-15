@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:45:34 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/14 17:01:36 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/15 18:00:02 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ char	*ft_itoa(int n)
 	res[len] = '\0';
 	if (n == -2147483648)
 	{
-		res = ft_strdup("-2147483648");
+		ft_strlcpy(res, "-2147483648", len + 1);
 		return (res);
 	}
 	if (n < 0)
 		n *= -1;
-	while (len-- >= 0)
+	while (len-- > 0)
 	{
 		res[len] = (n % 10) + '0';
 		n = n / 10;

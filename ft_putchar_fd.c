@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:39:55 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/15 12:41:42 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/15 16:34:52 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 
-int	main(void)
-{
-	ft_putchar_fd('c', 1);
-}
+// int	main(void)
+// {
+// 	ft_putchar_fd('c', 1);
+// }

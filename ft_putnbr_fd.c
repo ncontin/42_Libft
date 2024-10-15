@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:48:53 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/15 13:16:56 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/15 16:46:25 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,8 @@ void	ft_putnbr_fd(int n, int fd)
 		n *= -1;
 	}
 	if (n > 9)
-	{
-		ft_putnbr_fd((n / 10), 1);
-	}
-	n = (n % 10);
-	n = n + '0';
+		ft_putnbr_fd((n / 10), fd);
+	n = (n % 10) + '0';
 	write(fd, &n, 1);
 }
 
@@ -44,4 +41,9 @@ void	ft_putnbr_fd(int n, int fd)
 // 	ft_putnbr_fd(0, 1);
 // 	printf("\n");
 // 	ft_putnbr_fd(-2147483648, 1);
+// 	printf("\n");
+// 	ft_putnbr_fd(-57, 2);
+// 	printf("\n");
+// 	ft_putnbr_fd(-987441, 2);
+// 	printf("\n");
 // }

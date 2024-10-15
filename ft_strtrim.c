@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 08:55:56 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/14 15:44:33 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/15 17:50:58 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = 0;
 	start = find_start(s1, set);
 	end = find_end(s1, set);
+	if (start >= end)
+		return (ft_strdup(""));
 	res = malloc(end - start + 1);
 	if (!res)
 		return (NULL);
