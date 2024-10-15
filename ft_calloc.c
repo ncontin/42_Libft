@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 10:24:57 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/13 22:30:29 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/15 10:53:38 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
-	{
-		nmemb = 1;
-		size = 1;
-	}
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);

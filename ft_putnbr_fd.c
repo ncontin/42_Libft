@@ -1,40 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 09:28:52 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/15 08:17:27 by ncontin          ###   ########.fr       */
+/*   Created: 2024/10/15 12:48:53 by ncontin           #+#    #+#             */
+/*   Updated: 2024/10/15 13:16:56 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	*ptr_s1;
-	unsigned char	*ptr_s2;
-	size_t			i;
-
-	i = 0;
-	ptr_s1 = (unsigned char *)s1;
-	ptr_s2 = (unsigned char *)s2;
-	while (i < n)
+	if (n == -2147483648)
 	{
-		if (ptr_s1[i] != ptr_s2[i])
-			return (ptr_s1[i] - ptr_s2[i]);
-		i++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (0);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd((n / 10), 1);
+	}
+	n = (n % 10);
+	n = n + '0';
+	write(fd, &n, 1);
 }
+
+// #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char	str1[10] = "hello";
-// 	char	str2[10] = "q";
-
-// 	printf("%d\n", ft_memcmp(str1, str2, 3));
-// 	printf("%d\n", memcmp(str1, str2, 3));
+// 	ft_putnbr_fd(99, 1);
+// 	printf("\n");
+// 	ft_putnbr_fd(-99, 1);
+// 	printf("\n");
+// 	ft_putnbr_fd(0, 1);
+// 	printf("\n");
+// 	ft_putnbr_fd(-2147483648, 1);
 // }

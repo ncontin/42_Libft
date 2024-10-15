@@ -1,6 +1,10 @@
 {
 	"files.associations": {
 		"libft.h": "c",
-		"stdio.h": "c"
+		"stdio.h": "c",
+		"array": "c",
+		"random": "c",
+		"chrono": "c",
+		"functional": "c"
 	}
 }

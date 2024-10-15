@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:00:25 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/14 17:53:57 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/15 11:18:57 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,45 +38,67 @@ static int	count_words(char const *s, char c)
 	return (counter);
 }
 
+static int	find_word_len(char const *s, char c, int s_index)
+{
+	int	word_len;
+
+	word_len = 0;
+	while (s[s_index] == c)
+		s_index++;
+	while (s[s_index + word_len] != c && s[s_index + word_len])
+		word_len++;
+	return (word_len);
+}
+
+static int	fill_words(char const *s, char c, int s_index, char *array)
+{
+	int	len;
+
+	len = 0;
+	while (s[s_index] != c && s[s_index])
+	{
+		array[len] = s[s_index];
+		len++;
+		s_index++;
+	}
+	array[len] = '\0';
+	return (s_index);
+}
+
+static void	init_var(int *i, int *s_index)
+{
+	*i = 0;
+	*s_index = 0;
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		words;
 	int		i;
-	int		j;
-	int		len;
-	int		word_len;
+	int		s_index;
 	char	**array;
 
-	len = 0;
-	i = 0;
-	j = 0;
+	init_var(&i, &s_index);
 	words = count_words(s, c);
-	// array = malloc(sizeof(char **) * (words + 1));
-	array = (char **)malloc(sizeof(char *) * words);
+	array = (char **)malloc(sizeof(char *) * (words + 1));
+	if (s[0] == '\0')
+		array[0] = NULL;
 	if (!array)
 		return (NULL);
 	while (i < words)
 	{
-		word_len = 0;
-		while (s[j] == c)
-			j++;
-		while (s[j + word_len] != c)
-			word_len++;
-		array[i] = malloc(word_len + 1);
+		while (s[s_index] == c)
+			s_index++;
+		array[i] = malloc(find_word_len(s, c, s_index) + 1);
 		if (!(array[i]))
 			return (NULL);
-		len = 0;
-		while (s[j] != c)
-		{
-			array[i][len] = s[j];
-			len++;
-			j++;
-		}
-		array[i][len] = '\0';
+		s_index = fill_words(s, c, s_index, array[i]);
 		i++;
 	}
+	array[i] = NULL;
 	return (array);
 }
+
 // #include <stdio.h>
 
 // int	main(void)
