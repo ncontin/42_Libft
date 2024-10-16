@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:26:46 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/16 08:35:08 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/16 09:17:20 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dst_len;
 
 	i = 0;
+	src_len = 0;
+	dst_len = 0;
 	if (dst != 0)
 		dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	if (size == 0)
-		return (src_len);
 	if (size <= dst_len)
 		return (size + src_len);
 	while (src[i] && (dst_len + i) < (size - 1))
@@ -43,7 +43,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // 	size_t	size;
 // 	char	src[5] = "Hello";
 // 	char	dst[7] = "Bonjour";
+// 	char	b[0xF] = "nyan !";
 
+// 	printf("%zu\n", ft_strlcat(((void *)0), b, 2));
 // 	size = 20;
 // 	// printf("%zu\n", strlcat(dst, src, size));
 // 	// printf("strlcat: %s\n", dst);

@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 08:55:56 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/15 17:50:58 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/16 08:59:50 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 
 	j = 0;
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	start = find_start(s1, set);
 	end = find_end(s1, set);
 	if (start >= end)
@@ -90,4 +92,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 	printf("%d\n", find_end(s1, " \n\t"));
 // 	printf("%s\n", ft_strtrim(s1, " \n\t"));
 // 	printf("%s\n", ft_strtrim(s2, " \n\t"));
+// 	printf("%s\n", ft_strtrim(NULL, NULL));
+// 	printf("%s\n", ft_strtrim(s2, " \n\t"));
+// 	// strtrim("(null)", (null));
+// 	// strtrim("a", (null));
+// 	// strtrim("", (null));
+// 	// strtrim("(null)", );
+// 	// strtrim("(null)", abc);
 // }
