@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:26:46 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/14 08:47:57 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/16 08:35:08 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	src_len;
 	size_t	dst_len;
 
-	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
 	i = 0;
+	if (dst != 0)
+		dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
 	if (size == 0)
 		return (src_len);
-	if (dst == 0)
-		return (dst_len + src_len);
 	if (size <= dst_len)
 		return (size + src_len);
 	while (src[i] && (dst_len + i) < (size - 1))
@@ -37,17 +36,21 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (dst_len + src_len);
 }
 
+// #include <stdio.h>
+
 // int	main(void)
 // {
 // 	size_t	size;
-// 	char	src1[5] = "Hello";
-// 	char	dst1[7] = "Bonjour";
 // 	char	src[5] = "Hello";
 // 	char	dst[7] = "Bonjour";
 
 // 	size = 20;
-// 	printf("%zu\n", strlcat(dst, src, size));
-// 	printf("strlcat: %s\n", dst);
-// 	printf("%zu\n", ft_strlcat(dst1, src1, size));
-// 	printf("ft_strlcat: %s\n", dst1);
+// 	// printf("%zu\n", strlcat(dst, src, size));
+// 	// printf("strlcat: %s\n", dst);
+// 	// printf("%zu\n", strlcat(NULL, "", 0));
+// 	// printf("strlcat: %s\n", dst);
+// 	// printf("%zu\n", ft_strlcat(dst, src, size));
+// 	// printf("ft_strlcat: %s\n", dst);
+// 	printf("%zu\n", ft_strlcat(NULL, "", 0));
+// 	printf("ft_strlcat: %s\n", dst);
 // }
