@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:23:00 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/11 18:20:34 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/16 10:57:47 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
+
+// #include <bsd/string.h>
+// #include <stdio.h>
 
 // int	main(void)
 // {

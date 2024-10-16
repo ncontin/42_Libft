@@ -6,13 +6,15 @@
 #    By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 10:27:46 by ncontin           #+#    #+#              #
-#    Updated: 2024/10/15 12:48:44 by ncontin          ###   ########.fr        #
+#    Updated: 2024/10/16 11:51:07 by ncontin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_substr.c ft_strtrim.c ft_tolower.c ft_toupper.c
+BONUS_SRC = ft_lstnew.c ft_lstadd_front.c
 # It simply replaces the .c from each file in the SRC variable by .o
 OBJS     = $(SRC:.c=.o)
+OBJS_BONUS = $(BONUS_SRC:.c=.o)
 # CC is a variable containing the compiler
 CC      = cc
 # CCFLAGS is a variable containing the compiler flags
@@ -20,11 +22,15 @@ CCFLAGS = -Wall -Wextra -Werror
 # RM is an alias variable for the rm -f shell command.
 RM      = rm -f
 # NAME is a variable containing the name of the archive we want to create
+OBJS_ALL = $(OBJS) $(OBJS_BONUS)
 NAME	= libft.a
 
 # ALL is the first rule in the Makefile, making it the default rule when
 # calling the make command without specifying the rule.
 all: $(NAME)
+
+bonus: $(OBJS_BONUS)
+	ar rcs $(NAME) $(OBJS_BONUS)
 
 # $(NAME) is the main rule of the Makefile.
 # This rule has the OBJS variable as a dependency, which means, if one or
@@ -51,7 +57,9 @@ $(NAME): $(OBJS)
 # the OBJS_ALL variable, that is, every .o filenames.
 # This results in all the .o files being deleted.
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS_ALL)
+
+
 
 # FCLEAN rule has as prerequisite the CLEAN rule, which means that the
 # CLEAN rule will be run first.
@@ -69,4 +77,4 @@ fclean: clean
 re: fclean all
 
 
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, bonus
