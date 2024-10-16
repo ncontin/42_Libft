@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 11:50:32 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/16 20:12:38 by ncontin          ###   ########.fr       */
+/*   Created: 2024/10/16 18:41:22 by ncontin           #+#    #+#             */
+/*   Updated: 2024/10/16 19:17:17 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	new->next = *lst;
-	*lst = new;
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }
 
 // #include <stdio.h>
@@ -26,14 +31,15 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 // 	t_list	*node2;
 // 	t_list	*node3;
 // 	t_list	*list;
-// 	node1 = ft_lstnew("content1");
-// 	node2 = ft_lstnew("content2");
-// 	node3 = ft_lstnew("content3");
-// 	ft_lstadd_front(&list, node1);
-// 	ft_lstadd_front(&list, node2);
+// 	t_list	*last;
+
+// 	list = NULL;
+// 	node1 = ft_lstnew("node1");
+// 	node2 = ft_lstnew("node2");
+// 	node3 = ft_lstnew("node3");
 // 	ft_lstadd_front(&list, node3);
-// 	// t_list	*node_new;
-// 	// node_new = ft_lstnew("new");
-// 	// ft_lstadd_front(&list, node_new);
-// 	printf("%s\n", (char *)list->content);
+// 	ft_lstadd_front(&list, node2);
+// 	ft_lstadd_front(&list, node1);
+// 	last = ft_lstlast(list);
+// 	printf("%s\n", (char *)last->content);
 // }
