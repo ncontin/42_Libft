@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:16:38 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/15 12:35:08 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/17 17:28:40 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{

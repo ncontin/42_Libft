@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:20:06 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/15 17:36:38 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/17 17:16:50 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t			i;
 	unsigned int	slen;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	slen = ft_strlen(s);
 	if (start >= slen)
@@ -31,7 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		substr = (char *)malloc(len + 1);
 	if (!substr)
 		return (NULL);
-	while (i < len && s[start])
+	while (i < len && start < slen)
 		substr[i++] = s[start++];
 	substr[i] = '\0';
 	return (substr);

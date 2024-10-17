@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 09:35:01 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/17 12:10:23 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/17 17:32:55 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
+	if (lst == NULL || del == NULL)
+		return ;
 	(*del)(lst->content);
+	lst->content = NULL;
 	free(lst);
 }
 

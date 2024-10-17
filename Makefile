@@ -6,7 +6,7 @@
 #    By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 10:27:46 by ncontin           #+#    #+#              #
-#    Updated: 2024/10/17 13:11:19 by ncontin          ###   ########.fr        #
+#    Updated: 2024/10/17 17:30:37 by ncontin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,6 +98,12 @@ $(NAME): $(OBJS)
 # What it does is use the $(RM) alias variable followed by the content of
 # the OBJS_ALL variable, that is, every .o filenames.
 # This results in all the .o files being deleted.
+
+so:	$(OBJS_ALL)
+	$(CC) -nostartfiles -fPIC $(CCFLAGS) -c $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJS_ALL)
+
+
 clean:
 	$(RM) $(OBJS_ALL)
 

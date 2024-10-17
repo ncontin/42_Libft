@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 23:26:23 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/13 23:54:21 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/17 17:20:59 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	j;
 	char	*res;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = 0;
 	tot_len = (ft_strlen(s1) + ft_strlen(s2));
 	res = malloc(tot_len + 1);
@@ -31,11 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	j = 0;
 	while (s2[j])
-	{
-		res[i] = s2[j];
-		j++;
-		i++;
-	}
+		res[i++] = s2[j++];
 	res[i] = '\0';
 	return (res);
 }

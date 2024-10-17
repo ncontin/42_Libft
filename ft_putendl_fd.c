@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:47:57 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/16 09:22:34 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/17 17:27:47 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{

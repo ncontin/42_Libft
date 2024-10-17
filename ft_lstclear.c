@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:09:14 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/17 12:31:38 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/17 17:37:08 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*node;
 
+	if (lst == NULL || del == NULL)
+		return ;
 	while (*lst)
 	{
 		node = *lst;
 		(*del)(node->content);
+		node->content = NULL;
 		*lst = node->next;
 		free(node);
 	}

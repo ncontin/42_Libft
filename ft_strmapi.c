@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:26:34 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/15 12:12:50 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/17 17:25:42 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	unsigned int	len;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
 	str = malloc(len + 1);

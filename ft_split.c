@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:00:25 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/15 11:18:57 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/17 17:24:37 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ char	**ft_split(char const *s, char c)
 	int		s_index;
 	char	**array;
 
+	if (!s)
+		return (NULL);
 	init_var(&i, &s_index);
 	words = count_words(s, c);
 	array = (char **)malloc(sizeof(char *) * (words + 1));
-	if (s[0] == '\0')
-		array[0] = NULL;
 	if (!array)
 		return (NULL);
 	while (i < words)
