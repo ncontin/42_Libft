@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 09:35:01 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/17 17:32:55 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/21 12:50:03 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	if (lst == NULL || del == NULL)
 		return ;
 	(*del)(lst->content);
-	lst->content = NULL;
 	free(lst);
+	lst = NULL;
 }
 
 // #include <stdio.h>
@@ -35,11 +35,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 // 	void	(*ptr)(void *);
 
 // 	ptr = ft_del;
+// 	// node1 = ft_lstnew(ft_strdup("Hello"));
 // 	node1 = ft_lstnew(ft_strdup("Hello"));
 // 	printf("%s\n", (char *)node1->content);
 // 	ft_lstdelone(node1, ptr);
-// 	if (node1->content == NULL)
-// 		printf("content deleted");
-// 	else
-// 		printf("test");
+// 	printf("%s\n", (char *)node1->content);
+// 	printf("content deleted");
 // }

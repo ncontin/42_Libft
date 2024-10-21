@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:00:25 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/17 17:24:37 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/21 11:43:26 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ static int	find_word_len(char const *s, char c, int s_index)
 	int	word_len;
 
 	word_len = 0;
-	while (s[s_index] == c)
-		s_index++;
 	while (s[s_index + word_len] != c && s[s_index + word_len])
 		word_len++;
 	return (word_len);
@@ -65,10 +63,15 @@ static int	fill_words(char const *s, char c, int s_index, char *array)
 	return (s_index);
 }
 
-static void	init_var(int *i, int *s_index)
+static void	*free_mem(int i, char **array)
 {
-	*i = 0;
-	*s_index = 0;
+	while (i > 0)
+	{
+		free(array[i - 1]);
+		i--;
+	}
+	free(array);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -78,11 +81,12 @@ char	**ft_split(char const *s, char c)
 	int		s_index;
 	char	**array;
 
+	i = 0;
+	s_index = 0;
 	if (!s)
 		return (NULL);
-	init_var(&i, &s_index);
 	words = count_words(s, c);
-	array = (char **)malloc(sizeof(char *) * (words + 1));
+	array = (char **)ft_calloc(words + 1, sizeof(char *));
 	if (!array)
 		return (NULL);
 	while (i < words)
@@ -91,11 +95,10 @@ char	**ft_split(char const *s, char c)
 			s_index++;
 		array[i] = malloc(find_word_len(s, c, s_index) + 1);
 		if (!(array[i]))
-			return (NULL);
+			return (free_mem(i, array));
 		s_index = fill_words(s, c, s_index, array[i]);
 		i++;
 	}
-	array[i] = NULL;
 	return (array);
 }
 
@@ -109,7 +112,7 @@ char	**ft_split(char const *s, char c)
 // 	char	**array;
 
 // 	i = 0;
-// 	words = count_words(str, ' ');
+// 	words = count_words(str, ',');
 // 	printf("%d\n", words);
 // 	array = ft_split(str, ',');
 // 	while (i < words)
