@@ -6,7 +6,7 @@
 #    By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 10:27:46 by ncontin           #+#    #+#              #
-#    Updated: 2024/10/22 10:58:46 by ncontin          ###   ########.fr        #
+#    Updated: 2024/10/22 11:17:34 by ncontin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ NAME	= libft.a
 all: $(NAME)
 
 bonus: $(OBJS_BONUS)
-	ar rcs $(NAME) $(OBJS_BONUS)
+	ar rc $(NAME) $(OBJS_BONUS)
 
 # $(NAME) is the main rule of the Makefile.
 # This rule has the OBJS variable as a dependency, which means, if one or
@@ -82,7 +82,7 @@ bonus: $(OBJS_BONUS)
 # The commands are what is described above in the variable declaration
 # section :
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
 
 # CLEAN rule has no prerequisites
