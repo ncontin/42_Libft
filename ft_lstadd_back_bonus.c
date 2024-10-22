@@ -1,45 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 18:41:22 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/16 19:17:17 by ncontin          ###   ########.fr       */
+/*   Created: 2024/10/16 18:37:50 by ncontin           #+#    #+#             */
+/*   Updated: 2024/10/22 10:56:50 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
+	t_list	*last;
+
+	if (*lst == NULL)
 	{
-		lst = lst->next;
+		*lst = new;
+		return ;
 	}
-	return (lst);
+	last = *lst;
+	while (last->next != NULL)
+	{
+		last = last->next;
+	}
+	last->next = new;
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
+// 	t_list	*list;
 // 	t_list	*node1;
 // 	t_list	*node2;
 // 	t_list	*node3;
-// 	t_list	*list;
 // 	t_list	*last;
+// 	t_list	*current;
 
 // 	list = NULL;
 // 	node1 = ft_lstnew("node1");
 // 	node2 = ft_lstnew("node2");
 // 	node3 = ft_lstnew("node3");
-// 	ft_lstadd_front(&list, node3);
-// 	ft_lstadd_front(&list, node2);
-// 	ft_lstadd_front(&list, node1);
-// 	last = ft_lstlast(list);
-// 	printf("%s\n", (char *)last->content);
+// 	last = ft_lstnew("last");
+// 	ft_lstadd_back(&list, node1);
+// 	ft_lstadd_back(&list, node2);
+// 	ft_lstadd_back(&list, node3);
+// 	ft_lstadd_back(&list, last);
+// 	current = list;
+// 	while (current != NULL)
+// 	{
+// 		printf("%s\n", (char *)current->content);
+// 		current = current->next;
+// 	}
 // }

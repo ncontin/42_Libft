@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 12:50:14 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/16 13:19:15 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/22 10:22:58 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// typedef struct s_list
-// {
-// 	void			*content;
-// 	struct s_list	*next;
-// }					t_list;
 
 int	ft_lstsize(t_list *lst)
 {
@@ -27,8 +21,8 @@ int	ft_lstsize(t_list *lst)
 	current = lst;
 	while (current != NULL)
 	{
-		counter++;
 		current = current->next;
+		counter++;
 	}
 	return (counter);
 }
