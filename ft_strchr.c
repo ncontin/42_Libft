@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:33:22 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:57:14 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:48:08 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (0);
 }
-// #include <stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-// 	char str[] = "foobar";
-// 	printf("%s\n", strchr(str, 'o'));
-// 	printf("%s\n", ft_strchr(str, 'o'));
-// }

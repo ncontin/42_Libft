@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 10:24:57 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/15 10:53:38 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:50:22 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
-// int	main(void)
-// {
-// 	int	n;
-// 	int	*array;
-// 	int	i;
-
-// 	n = 5;
-// 	array = (int *)calloc(n, sizeof(int));
-// 	if (array == NULL)
-// 	{
-// 		fprintf(stderr, "Memory allocation failed!\n");
-// 		return (1);
-// 	}
-// 	i = 0;
-// 	printf("Array after calloc:");
-// 	while (i < n)
-// 	{
-// 		printf("%d ", array[i]);
-// 		i++;
-// 	}
-// 	printf("\n");
-// 	free(array);
-// }

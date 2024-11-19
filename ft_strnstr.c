@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:23:00 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:57:06 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:47:34 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-
-// #include <bsd/string.h>
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	const char	str[20] = "Foo Bar Baz";
-// 	const char	substr[10] = "Bar";
-// 	char		*result;
-
-// 	result = ft_strnstr(str, substr, 4);
-// 	printf("The substring is: %s\n", result);
-// }

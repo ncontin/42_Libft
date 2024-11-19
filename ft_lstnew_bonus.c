@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:21:11 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:23:08 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:48:54 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,3 @@ t_list	*ft_lstnew(void *content)
 	el->next = NULL;
 	return (el);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	t_list	*new;
-
-// 	// t_list	*nbr;
-// 	// nbr = ft_lstnew(10);
-// 	new = ft_lstnew("Hello");
-// 	printf("%s\n", (char *)new->content);
-// 	// printf("%d\n", (int *)nbr->content);
-// 	free(new);
-// }

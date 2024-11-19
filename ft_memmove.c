@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:23:08 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 09:19:39 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:48:34 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-// int	main(void)
-// {
-// 	char	str1[] = "aaaaaa";
-// 	char	str2[] = "123456";
-
-// 	puts("str1 before memmove ");
-// 	puts(str1);
-// 	// Copies contents of str2 to str1
-// 	// memmove(str1, str2, 4);
-// 	ft_memmove(str1, str2, 4);
-// 	puts("\nstr1 after memmove ");
-// 	puts(str1);
-// }

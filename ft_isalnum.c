@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:36:19 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/13 22:30:29 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:50:18 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,3 @@ int	ft_isalnum(int c)
 		return (8);
 	return (0);
 }
-
-// #include <stdio.h>
-// #include <ctype.h>
-// int main(void)
-// {
-// 	char c = ' ';
-// 	printf("%d\n", isalnum(c));
-// 	printf("%d\n", ft_isalnum(c));
-// }

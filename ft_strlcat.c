@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:26:46 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:57:08 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:47:54 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }
-
-// #include <bsd/string.h>
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	size_t	size;
-// 	char	src[5] = "Hello";
-// 	char	dst[7] = "Bonjour";
-// 	char	b[0xF] = "nyan !";
-
-// 	printf("%zu\n", ft_strlcat(((void *)0), b, 2));
-// 	size = 20;
-// 	// printf("%zu\n", strlcat(dst, src, size));
-// 	// printf("strlcat: %s\n", dst);
-// 	// printf("%zu\n", strlcat(NULL, "", 0));
-// 	// printf("strlcat: %s\n", dst);
-// 	// printf("%zu\n", ft_strlcat(dst, src, size));
-// 	// printf("ft_strlcat: %s\n", dst);
-// 	printf("%zu\n", ft_strlcat(NULL, "", 0));
-// 	printf("ft_strlcat: %s\n", dst);
-// }

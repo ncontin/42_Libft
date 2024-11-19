@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:22:23 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 09:20:10 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:47:38 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	printf("%d\n", strncmp("test\200", "test\0", 6));
-// 	printf("%d\n", ft_strncmp("test\200", "test\0", 6));
-// }

@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:29:00 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 09:19:42 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:48:38 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-// #include <stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-//     char str1[] = "Geeks";
-//     char str2[] = "Quiz";
-//     puts("str1 before memcpy ");
-//     puts(str1);
-//     // Copies contents of str2 to str1
-//     ft_memcpy(str1, str2, sizeof(str2));
-//     puts("\nstr1 after memcpy ");
-//     puts(str1);
-// }

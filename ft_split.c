@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:00:25 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:57:17 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:48:14 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,23 +101,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (array);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	int		i;
-// 	char	str[] = "Hello, Bonjour, Ciao, Ola";
-// 	int		words;
-// 	char	**array;
-
-// 	i = 0;
-// 	words = count_words(str, ',');
-// 	printf("%d\n", words);
-// 	array = ft_split(str, ',');
-// 	while (i < words)
-// 	{
-// 		printf("%s\n", array[i]);
-// 		i++;
-// 	}
-// }

@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:20:06 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:57:03 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:47:18 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	printf("%s\n", ft_substr("hello baby", 0, 3));
-// 	printf("%s\n", ft_substr("hello baby", 3, 3));
-// 	printf("%s\n", ft_substr("hello baby", 6, 3));
-// 	printf("%s\n", ft_substr("hello baby", 9, 3));
-// }

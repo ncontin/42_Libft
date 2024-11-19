@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 22:13:25 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:56:52 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:50:32 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
-
-// int	main(void)
-// {
-// 	printf("%d\n", ft_atoi("    -2147483648"));
-// }

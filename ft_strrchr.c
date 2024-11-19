@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:07:56 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:57:04 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:47:28 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	char	str[] = "Bonjour";
-
-// 	printf("%s\n", strrchr(str, 'o'));
-// 	printf("%s\n", ft_strrchr(str, 'o'));
-// }

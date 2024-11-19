@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:16:38 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:57:12 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:48:01 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
-// void	ft_tolow(unsigned int i, char *c)
-// {
-// 	if (*c >= 'A' && *c <= 'Z')
-// 		*c += 32;
-// }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	str[] = "LoReM iPsUm";
-
-// 	ft_striteri(str, ft_tolow);
-// 	printf("%s\n", str);
-// }

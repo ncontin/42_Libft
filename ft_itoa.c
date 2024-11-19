@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:45:34 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/15 18:00:02 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:50:00 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,3 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 	return (res);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	printf("%d\n", find_len(0));
-// 	printf("%s\n", ft_itoa(-333456));
-// 	printf("%s\n", ft_itoa(0));
-// 	printf("%s\n", ft_itoa(333456));
-// 	printf("%s\n", ft_itoa(-2147483648));
-// }

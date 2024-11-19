@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:48:53 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:46:37 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:48:20 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,3 @@ void	ft_putnbr_fd(int n, int fd)
 	n = (n % 10) + '0';
 	write(fd, &n, 1);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	ft_putnbr_fd(99, 1);
-// 	printf("\n");
-// 	ft_putnbr_fd(-99, 1);
-// 	printf("\n");
-// 	ft_putnbr_fd(0, 1);
-// 	printf("\n");
-// 	ft_putnbr_fd(-2147483648, 1);
-// 	printf("\n");
-// 	ft_putnbr_fd(-57, 2);
-// 	printf("\n");
-// 	ft_putnbr_fd(-987441, 2);
-// 	printf("\n");
-// }

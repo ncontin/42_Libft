@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:04:50 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 09:20:05 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:47:46 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-// #include <stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-// 	char str[] = "hello";
-// 	printf("%d\n", strlen(str));
-// 	printf("%d\n", ft_strlen(str));
-// }

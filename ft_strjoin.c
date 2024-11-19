@@ -6,7 +6,7 @@
 /*   By: ncontin <ncontin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 23:26:23 by ncontin           #+#    #+#             */
-/*   Updated: 2024/10/22 10:57:10 by ncontin          ###   ########.fr       */
+/*   Updated: 2024/10/23 18:47:58 by ncontin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	res[i] = '\0';
 	return (res);
 }
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	printf("%s\n", ft_strjoin("hello", "bonjour"));
-// }
